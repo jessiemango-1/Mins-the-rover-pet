@@ -3,177 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mins the Rover</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<title>Mins Space Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#000;
+  color:white;
 }
-
-body {
-  background: linear-gradient(to bottom, #000000, #0d1b2a);
-  color: white;
-  overflow-x: hidden;
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.8);
+  position:sticky;
+  top:0;
 }
-
-nav {
-  position: fixed;
-  width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(20px);
-  background: rgba(0,0,0,0.4);
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  padding:60px;
 }
-
-nav h2 {
-  font-weight: 600;
-  letter-spacing: 1px;
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.3s;
 }
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 30px;
-  font-weight: 400;
-  transition: opacity 0.3s ease;
+.card:hover{
+  transform:translateY(-8px);
 }
-
-nav a:hover {
-  opacity: 0.6;
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  cursor:pointer;
+  font-weight:600;
 }
-
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10%;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #ffffff, #a0c4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
-  animation: fadeIn 1.5s ease forwards;
-}
-
-.hero p {
-  font-size: 1.4rem;
-  max-width: 600px;
-  opacity: 0.8;
-  line-height: 1.6;
-  animation: fadeIn 2s ease forwards;
-}
-
-.button {
-  margin-top: 40px;
-}
-
-.button a {
-  text-decoration: none;
-  background: white;
-  color: black;
-  padding: 15px 35px;
-  border-radius: 40px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.button a:hover {
-  background: #d9d9d9;
-  transform: translateY(-3px);
-}
-
-section {
-  padding: 120px 10%;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-section p {
-  max-width: 700px;
-  margin: auto;
-  opacity: 0.7;
-  line-height: 1.6;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-footer {
-  text-align: center;
-  padding: 40px;
-  opacity: 0.5;
-  font-size: 0.9rem;
+.cart{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:white;
+  color:black;
+  padding:15px 25px;
+  border-radius:40px;
+  font-weight:600;
+  cursor:pointer;
 }
 </style>
 </head>
-
 <body>
 
 <nav>
-  <h2>Mins</h2>
-  <div>
-    <a href="#mission">Mission</a>
-    <a href="#technology">Technology</a>
-    <a href="#about">About</a>
-  </div>
+  <h2>Mins Space Store</h2>
+  <div>Cart: <span id="cart-count">0</span></div>
 </nav>
 
-<div class="hero">
-  <h1>Mins the Rover</h1>
-  <p>
-    Designed for exploration. Engineered for discovery.  
-    A next-generation Mars rover concept created for the GT Expo.
-  </p>
-  <div class="button">
-    <a href="#mission">Explore the Mission</a>
-  </div>
+<section class="products">
+
+<div class="card">
+  <h3>Mins Rover Model</h3>
+  <p>$120</p>
+  <button onclick="addToCart('Mins Rover Model',120)">Add to Cart</button>
 </div>
 
-<section id="mission">
-  <h2>The Mission</h2>
-  <p>
-    Mins is built to analyze Martian soil, capture high-resolution imagery,
-    and collect environmental data to advance our understanding of Mars.
-  </p>
+<div class="card">
+  <h3>Mars Exploration Kit</h3>
+  <p>$75</p>
+  <button onclick="addToCart('Mars Exploration Kit',75)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <h3>GT Expo Hoodie</h3>
+  <p>$60</p>
+  <button onclick="addToCart('GT Expo Hoodie',60)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <h3>Autonomous Drone Add-On</h3>
+  <p>$210</p>
+  <button onclick="addToCart('Autonomous Drone Add-On',210)">Add to Cart</button>
+</div>
+
 </section>
 
-<section id="technology">
-  <h2>Advanced Technology</h2>
-  <p>
-    Featuring autonomous navigation, precision robotic instruments,
-    and next-level durability for extreme planetary conditions.
-  </p>
-</section>
+<div class="cart" onclick="goToCheckout()">
+  View Cart
+</div>
 
-<section id="about">
-  <h2>About the Creator</h2>
-  <p>
-    Created by Lily for the GT Expo — combining innovation,
-    engineering design, and a passion for space exploration.
-  </p>
-</section>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-<footer>
-  © 2026 Mins Project | GT Expo
-</footer>
+function updateCartCount(){
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+function addToCart(name,price){
+  cart.push({name,price});
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(name + " added to cart!");
+}
+
+function goToCheckout(){
+  window.location.href="checkout.html";
+}
+
+updateCartCount();
+</script>
 
 </body>
 </html>

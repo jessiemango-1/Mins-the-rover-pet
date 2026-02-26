@@ -1,151 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+<title>Mins Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mins Space Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background: #fef6f0; /* soft pastel peach */
-  color:#333;
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #fdfbff, #e6f0ff);
+    text-align: center;
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #ffdede;
-  position:sticky;
-  top:0;
+header {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-nav h2{
-  color:#ff8fa3;
+header a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
 }
 
-nav div{
-  font-weight:600;
+h1 {
+    margin-top: 40px;
 }
 
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
-  padding:60px;
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
 }
 
-.card{
-  background:#fff5f8; /* pastel pink card */
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
-  transition:0.3s;
+.card {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.card:hover {
+    transform: translateY(-8px);
 }
 
-button{
-  margin-top:15px;
-  padding:10px 20px;
-  border:none;
-  border-radius:30px;
-  background:#ffb3c1;
-  color:white;
-  cursor:pointer;
-  font-weight:600;
-  transition:0.3s;
+.price {
+    color: #6c8cff;
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 600;
 }
 
-button:hover{
-  background:#ff8fa3;
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #6c8cff;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-.cart{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#ffb3c1;
-  color:white;
-  padding:15px 25px;
-  border-radius:40px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
+button:hover {
+    background: #4a6cff;
 }
-
-.cart:hover{
-  background:#ff8fa3;
-}
-
 </style>
 </head>
+
 <body>
 
-<nav>
-  <h2>Mins Store</h2>
-  <div>Cart: <span id="cart-count">0</span></div>
-</nav>
+<header>
+    <a href="home.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="checkout.html">Cart</a>
+</header>
 
-<section class="products">
+<h1>Our Products 🌸</h1>
 
-<div class="card">
-  <h3>Mins Rover Model</h3>
-  <p>$120</p>
-  <button onclick="addToCart('Mins Rover Model',120)">Add to Cart</button>
+<div class="products">
+
+    <div class="card">
+        <h2>Mins the Rover</h2>
+        <p>Smart Adventure Companion</p>
+        <div class="price">$39.99</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Mins Mini</h2>
+        <p>Smaller indoor version</p>
+        <div class="price">$24.99</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Mins Explorer Pack</h2>
+        <p>Accessories + Charging Dock</p>
+        <div class="price">$19.99</div>
+        <button>Add to Cart</button>
+    </div>
+
 </div>
-
-<div class="card">
-  <h3>Mars Exploration Kit</h3>
-  <p>$75</p>
-  <button onclick="addToCart('Mars Exploration Kit',75)">Add to Cart</button>
-</div>
-
-<div class="card">
-  <h3>GT Expo Hoodie</h3>
-  <p>$60</p>
-  <button onclick="addToCart('GT Expo Hoodie',60)">Add to Cart</button>
-</div>
-
-<div class="card">
-  <h3>Autonomous Drone Add-On</h3>
-  <p>$210</p>
-  <button onclick="addToCart('Autonomous Drone Add-On',210)">Add to Cart</button>
-</div>
-
-</section>
-
-<div class="cart" onclick="goToCheckout()">
-  View Cart
-</div>
-
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function updateCartCount(){
-  document.getElementById("cart-count").innerText = cart.length;
-}
-
-function addToCart(name,price){
-  cart.push({name,price});
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  alert(name + " added to cart!");
-}
-
-function goToCheckout(){
-  window.location.href="checkout.html";
-}
-
-updateCartCount();
-</script>
 
 </body>
 </html>

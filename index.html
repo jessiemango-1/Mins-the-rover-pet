@@ -9,59 +9,88 @@
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:#000;
-  color:white;
+  background: #fef6f0; /* soft pastel peach */
+  color:#333;
 }
+
 nav{
   display:flex;
   justify-content:space-between;
   padding:20px 60px;
-  background:rgba(0,0,0,0.8);
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ffdede;
   position:sticky;
   top:0;
 }
+
+nav h2{
+  color:#ff8fa3;
+}
+
+nav div{
+  font-weight:600;
+}
+
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:40px;
   padding:60px;
 }
+
 .card{
-  background:#111;
+  background:#fff5f8; /* pastel pink card */
   padding:30px;
   border-radius:20px;
   text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
   transition:0.3s;
 }
+
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-5px);
 }
+
 button{
   margin-top:15px;
   padding:10px 20px;
   border:none;
   border-radius:30px;
-  background:white;
+  background:#ffb3c1;
+  color:white;
   cursor:pointer;
   font-weight:600;
+  transition:0.3s;
 }
+
+button:hover{
+  background:#ff8fa3;
+}
+
 .cart{
   position:fixed;
   right:20px;
   bottom:20px;
-  background:white;
-  color:black;
+  background:#ffb3c1;
+  color:white;
   padding:15px 25px;
   border-radius:40px;
   font-weight:600;
   cursor:pointer;
+  transition:0.3s;
 }
+
+.cart:hover{
+  background:#ff8fa3;
+}
+
 </style>
 </head>
 <body>
 
 <nav>
-  <h2>Mins Space Store</h2>
+  <h2>Mins Store</h2>
   <div>Cart: <span id="cart-count">0</span></div>
 </nav>
 

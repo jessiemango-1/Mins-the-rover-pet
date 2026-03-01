@@ -7,17 +7,75 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body {margin:0; font-family:'Outfit',sans-serif; background:linear-gradient(135deg,#fdfbff,#e6f0ff); color:#444;}
-header {display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.05);}
-header a {text-decoration:none; color:#666; margin-left:25px; font-weight:600;}
-header a:hover{color:#6c8cff;}
-section {padding:80px 20px; text-align:center;}
-h1 {font-size:48px; margin-bottom:15px;}
-p {font-size:20px; color:#777;}
-.btn {display:inline-block; margin-top:30px; padding:14px 28px; background:#6c8cff; color:white; border-radius:30px; text-decoration:none; transition:0.3s;}
-.btn:hover {background:#4a6cff; transform:translateY(-3px);}
+body {
+  margin:0;
+  font-family:'Outfit',sans-serif;
+  background:linear-gradient(135deg,#fdfbff,#e6f0ff);
+  color:#444;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:white;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+header a {
+  text-decoration:none;
+  color:#666;
+  margin-left:25px;
+  font-weight:600;
+}
+
+header a:hover {
+  color:#6c8cff;
+}
+
+section {
+  padding:80px 20px;
+  text-align:center;
+}
+
+h1 {
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+p {
+  font-size:20px;
+  color:#777;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  background:#6c8cff;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#4a6cff;
+  transform:translateY(-3px);
+}
+
+/* IMAGE STYLE */
+.hero-img {
+  width:80%;
+  max-width:800px;
+  margin-bottom:40px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -29,11 +87,23 @@ p {font-size:20px; color:#777;}
   </div>
 </header>
 
-  
 <section>
+
+  <!-- HOMEPAGE IMAGE -->
+  <img src="homepage.png" alt="Mins the Rover" class="hero-img">
+
   <h1>Welcome to Mins the Rover!</h1>
-  <p>Mins the rover pet is a toy that can play with you like a real pet. Mins can do everything a regular pet can do and even more! For example, Mins can play simple games with you, such as fetch! Mins can rotate, spin, and light up, providing the best playing experience. This is how Mins is an awesome toy!  </p>
+
+  <p>
+  Mins the rover pet is a toy that can play with you like a real pet.
+  Mins can do everything a regular pet can do and even more!
+  For example, Mins can play simple games with you, such as fetch!
+  Mins can rotate, spin, and light up, providing the best playing experience.
+  This is how Mins is an awesome toy!
+  </p>
+
   <a href="index.html" class="btn">See Products</a>
+
 </section>
 
 </body>

@@ -7,22 +7,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body {margin:0; font-family:'Outfit',sans-serif; background:linear-gradient(135deg,#fdfbff,#e6f0ff); text-align:center;}
-header {background:white; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.05);}
-header a {margin:0 15px; text-decoration:none; color:#666; font-weight:600;}
-h1 {margin-top:40px;}
-.products {display:flex; justify-content:center; gap:30px; flex-wrap:wrap; padding:50px 20px;}
-.card {background:white; width:250px; padding:25px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); transition:0.3s;}
-.card:hover {transform:translateY(-8px);}
-.price {color:#6c8cff; font-size:20px; margin:15px 0; font-weight:600;}
-button {padding:10px 20px; border:none; border-radius:20px; background:#6c8cff; color:white; cursor:pointer; font-weight:600;}
-button:hover {background:#4a6cff;}
-..header-img {
-  width:80%;
-  max-width:600px;
-  height:auto;
-  margin-top:20px;
-  border-radius:20px;
+body {
+  margin:0; 
+  font-family:'Outfit',sans-serif; 
+  background:linear-gradient(135deg,#fdfbff,#e6f0ff); 
+  text-align:center;
+}
+
+header {
+  background:white; 
+  padding:20px; 
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+header a {
+  margin:0 15px; 
+  text-decoration:none; 
+  color:#666; 
+  font-weight:600;
+}
+
+h1 {
+  margin-top:40px;
+}
+
+.products {
+  display:flex; 
+  justify-content:center; 
+  gap:30px; 
+  flex-wrap:wrap; 
+  padding:50px 20px;
+}
+
+.card {
+  background:white; 
+  width:250px; 
+  padding:25px; 
+  border-radius:20px; 
+  box-shadow:0 8px 20px rgba(0,0,0,0.05); 
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-8px);
+}
+
+.price {
+  color:#6c8cff; 
+  font-size:20px; 
+  margin:15px 0; 
+  font-weight:600;
+}
+
+button {
+  padding:10px 20px; 
+  border:none; 
+  border-radius:20px; 
+  background:#6c8cff; 
+  color:white; 
+  cursor:pointer; 
+  font-weight:600;
+}
+
+button:hover {
+  background:#4a6cff;
+}
+
+/* New bigger header image */
+.header-img {
+  width:90%;        /* makes the image 90% of page width */
+  max-width:800px;  /* prevents it from being too huge */
+  height:auto;      /* keeps proportions correct */
+  margin-top:20px;  /* space below the header */
+  border-radius:20px; /* optional rounded corners */
 }
 </style>
 </head>
